@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+#loot {
+  position: relative;
+}
+.menuBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 50px);
+  border: 1px solid red;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menuBg>ul {
+  width: 50%;
+  height: 50%;
+  background-color: #fff;
+  border-radius: 20px;
+  
+}
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10vh;
+  right: 10vh;
+}
+.closeBtn>* {
+  font-size: 2rem;
+  color: #fff;
+}
