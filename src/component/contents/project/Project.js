@@ -6,6 +6,7 @@ function Project(){
       <div className='title'>
         <h2 className='contentTitle'>{ContentsData[2].title}</h2>
         <div className='contentBox aboutMe'>
+          <a href="https://ztarc12.github.io/todoList/">투두리스트</a>
         </div>
       </div>
     </div>
