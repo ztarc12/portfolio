@@ -60,6 +60,17 @@ section {
   background-size: cover;
   background-color: #fff;
 }
+.noContIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info {
+  background-color: lightcoral !important;
+}
+.connect {
+  background-color: green !important;
+}
 
 .contentBg {
   position: absolute;
@@ -81,7 +92,7 @@ section {
   top: 0;
   left: 0;
 }
-.contentBox {
+/* .contentBox {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   place-items: right;
@@ -97,7 +108,7 @@ section {
   height: 100px;
   background-image: url('../../public/free-icon-rounded-rectangle-2708356.png');
   background-size: cover;
-}
+} */
 .hide {
   visibility: hidden;
   opacity: 0;

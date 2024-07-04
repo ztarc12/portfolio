@@ -1,61 +1,23 @@
 import './info.css'
-import InfoData from './InfoData';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faCalendarDays, faLocationDot, faPhone, faComment, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { useLocation } from 'react-router-dom';
+import ContentsData from '../../ContentsData';
 import { useEffect } from 'react';
 
-
-function Info({ content }) {
-  const location = useLocation()
-  useEffect(()=>{
-    if(location.pathname === '/info') {
-      document.body.style.overflowX = 'hidden'
-    } else {
-      document.body.style.overflowX = 'auto'
-    }
-  }, [location.pathname])
+function Info({}) {
   return(
-    <div className='about'>
-      <h2 className='contentTitle'>{content.title}</h2>
-      <div>
-        <div className='aboutBox box'>
-          {
-            InfoData.map((content,i)=>{
-              return(
-                <AboutMe key={i} content={content}/>
-              )
-            })
-          }
+    <div className='title aboutArea' id='info'>
+      <h2 className='contentTitle'>{ContentsData[0].title}</h2>
+      <div className='aboutMe'>
+        <div className='subTitle'>
+          <h2>안녕하세요 프론트엔드라는 꿈을 향해 달리고 있는 임재호 입니다.</h2>
         </div>
-      </div>
-      <div>
-        <div className='aboutBox box'>
-          {
-            InfoData.map((content,i)=>{
-              return(
-                <AboutMe key={i} content={content}/>
-              )
-            })
-          }
+        <div className='aboutTextBox'>
+          <div className='aboutText'>
+            <p>저는 열정과 끈기로 프론트엔드 개발에 도전하고 있는 신입 개발자입니다. 사용자 경험을 직접 만들어가는 일에 큰 매력을 느끼며, 새로운 기술과 디자인 트렌드에 대한 열망으로 매일 성장하고 있습니다.</p>
+            {/* <p>비록 경험은 많지 않지만, 문제 해결에 대한 끈기와 배움에 대한 열정은 누구보다 강합니다. 기술적 도전과 창의적인 문제 해결을 통해 더 나은 사용자 경험을 제공하기 위해 노력하고 있습니다.</p> */}
+          </div>
         </div>
       </div>
     </div>
-  )
-}
-function AboutMe({content}){
-  return(
-    <>
-      <div className='box1'>
-        <div className='aboutTitleIcon'>
-          <FontAwesomeIcon icon={content.image} />
-        </div>
-        <div>
-          <h3>{content.title}</h3>
-          <p>{content.value}</p>
-        </div>
-      </div>
-    </>
   )
 }
 export default Info

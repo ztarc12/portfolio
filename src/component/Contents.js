@@ -12,13 +12,21 @@ function Contents({ContentData}) {
   const [addHide, setAddHide] = useState(false)
   const [addShow, setAddShow] = useState(true);
   
-  const contentClick = (value) => {
-    setAddHide(true)
-    navigate(value)
-  }
+  
+  //useEffect
   useEffect(()=>{
     if(location.pathname === '/') {
       setAddHide(false)
+    }
+  })
+  useEffect(()=>{
+    if(location.pathname === '/info') {
+      window.scrollTo({
+        top:0,
+        // left:0,
+        behavior:'auto'
+      })
+      setAddHide(true)
     }
   })
   return(
@@ -31,7 +39,7 @@ function Contents({ContentData}) {
           {
             ContentsData.map((content,i)=>{
               return (
-                <Card key={i} contentClick={contentClick} content={content} addHide={addHide} />
+                <Card key={i} content={content} addHide={addHide} />
               )
             })
           }
@@ -59,23 +67,31 @@ function Card ({content, contentClick, addHide}) {
     <>
       <Link to={content.value}>
         <div className={`cardBox`} onClick={()=>{contentClick(content.value)}}>
-          <div className='contIcon'>
-            <div>
-              {content.id}
+          {content.useIcon ? (
+            <div className='contIcon'>
+              <div>
+                {content.id}
+              </div>
+              <div>
+                {content.id}
+              </div>
+              <div>
+                {content.id}
+              </div>
+              <div>
+                {content.id}
+              </div>
+              <div>
+                {content.id}
+              </div>
             </div>
-            <div>
-              {content.id}
-            </div>
-            <div>
-              {content.id}
-            </div>
-            <div>
-              {content.id}
-            </div>
-            <div>
-              {content.id}
-            </div>
-          </div>
+            ) : (
+              <div className={`noContIcon ${content.className}`}>
+                <img src={content.img}></img>
+              </div>
+            )
+            
+          }
           <h2>{content.title}</h2>
         </div>
       </Link>

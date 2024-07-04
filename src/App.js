@@ -1,74 +1,74 @@
 import './App.css';
 import { Routes, Route, useNavigate, useLocation  } from "react-router-dom"
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+// import botArrow from '/botArrow.png'
 
 //component
+import FirstPage from './component/FirstPage';
 import Menu from './component/Menu'
-import Contents from './component/Contents';
-
-import { useEffect, useState } from 'react';
+// import Contents from './component/Contents';
+import Info from './component/contents/info/Info';
+import ContentsData from './component/ContentsData';
 
 
 //App
 function App() {
-  
-  const navigate = useNavigate()
   const location = useLocation()
   
-  const [addHide, setAddHide] = useState(false);
-  const [addShow, setAddShow] = useState(true);
-
-  const menuMove = () => {
-    navigate('/menu')
-    setAddShow(false)
-    setAddHide(true)
-  }
-  const pageBack = () => {
-    if (location.pathname !== '/menu'){
-      navigate(-1)
-      setAddHide(false)
-      setAddShow(true)
-    }
-    navigate(-1)
-    setAddHide(false)
-    setAddShow(true)
-  }
-  const homeClick = () => {
-    navigate('/')
-    setAddHide(false)
-    setAddShow(true)
-  }
+  const [topMoveIcon, setTopMoveIcon] = useState(false)
 
   useEffect(()=>{
-    if(location.pathname === '/info') {
-      document.body.style.overflowX = 'hidden'
-    } else {
-      document.body.style.overflowX = 'auto'
+    const moveScroll =()=>{
+      if(window.scrollY >= 150) {
+        setTopMoveIcon(true)
+      } else {
+        setTopMoveIcon(false)
+      }
     }
-  }, [location.pathname])
+    window.addEventListener('scroll', moveScroll)
+    return ()=>{
+      window.removeEventListener('scroll', moveScroll)
+    }
+  },[])
+
+  const topToScroll = ()=>{
+    window.scrollTo({top:0, behavior:'smooth'})
+  }
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   return (
     <div className="App">
-      <nav className='mainNav'>
-        <a onClick={()=>{menuMove()}}>메뉴1</a>
-        <a onClick={()=>{homeClick()}}>홈(로고)</a>
-        <a onClick={()=>{pageBack()}}>뒤로가기</a>
-      </nav>
-      <div className='section bg'>
-        <div className={`mainTitle ${addHide ? 'hide' : 'show'}`}>
-          <h1>PORTFOILO</h1>
-          <h2>IN JAEHO.</h2>
-        </div>
-        <div className={`scroll ${addHide ? 'hide' : 'show'}`}>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <div className='section'>
-        <Contents location={location} navigate={navigate}></Contents>
-      </div>
-      <Routes>
-        <Route path='/menu' element={<Menu pageBack={pageBack}/>}/>
-      </Routes>
+      <Menu/>
+      {topMoveIcon && <Link to='/' onClick={()=>{topToScroll()}} className='topMoveBtn'/> }
+      <FirstPage/>
+        {
+          ContentsData.map((content,i)=>{
+            const Component = content.components
+            if (Component === Info) {
+              return (
+                <Component key={i}/>
+              )
+            } else {
+              return(
+                // <div className='section' id={content.href}>
+                // </div>
+                  <Component key={i}/>
+              )
+            }
+          })
+        }
+      <footer style={{padding: '2rem'}}>
+        <p>© 2024. Lim Jae Ho. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

@@ -1,44 +1,24 @@
-.about {
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  border: 1px solid yellow;
+.aboutArea {
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4)
+}
+.aboutMe {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 1rem;
+  width: 50%;
 }
-.contentTitle {
-  font-size: 4rem;
-  letter-spacing: 1.2rem;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  transition: 0.2s ease-out;
-}
-.aboutBox {
+.subTitle {
   display: flex;
-  flex-wrap: row wrap;
-  flex-flow: wrap;
-  justify-content: center;
 }
-.box {
-  background-color: #fff;
-  border-radius: 1rem;
-  padding: 2rem;
+.aboutText>p {
+  height: 70px;
+  word-break: break-all;
+  white-space: break-spaces;
+  text-align: left;
+  color: #fff;
 }
 .aboutTitleIcon {
   font-size: 2rem;
-}
-.box1 {
-  border: 1px solid green;
-  width: calc(100% / 4);
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-}
-.box1>div {
-  border: 1px solid #000;
-  margin-left: 1rem;
 }

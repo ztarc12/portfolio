@@ -1,33 +1,50 @@
 import Info from './contents/info/Info';
+import Connect from './contents/connect/Connect';
+import Skill from './contents/skill/Skill';
+import Project from './contents/project/Project';
+// import infoSvg from '../../public/info.svg'
+// import phoneSvg from '../../public/phone.svg'
 
 const ContentsData = [
   {
     id : 0,
-    title : '소개',
+    title : 'About Me',
     value : '/info',
     components : Info,
-    useCardInner : false
+    useCardInner : false,
+    useIcon : false,
+    img : './info.svg',
+    href : 'info'
   },
   {
     id : 1,
-    title : '스킬',
+    title : 'Skill',
     value : '/skill',
-    components : Info,
-    useCardInner : true
+    components : Skill,
+    useCardInner : true,
+    useIcon : true,
+    img : '',
+    href : 'skill'
   },
   {
     id : 2,
-    title : '프로젝트',
+    title : 'Project',
     value : '/project',
-    components : Info,
-    useCardInner : true
+    components : Project,
+    useCardInner : true,
+    useIcon : true,
+    img : '',
+    href : 'project'
   },
   {
     id : 3,
-    title : '연락',
+    title : 'Connect',
     value : '/connect',
-    components : Info,
-    useCardInner : false
+    components : Connect,
+    useCardInner : false,
+    useIcon : false,
+    img : './phone.svg',
+    href : 'connect'
   }
 ];
 

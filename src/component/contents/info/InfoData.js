@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCalendarDays, faLocationDot, faPhone, faComment, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const InfoData = [
