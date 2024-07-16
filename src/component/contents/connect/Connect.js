@@ -1,6 +1,6 @@
 import './connect.css'
 
-import InfoData from '../info/InfoData'
+import InfoData from '../about/InfoData'
 import ConnectData from './ConnectData';
 import ContentsData from '../../ContentsData';
 

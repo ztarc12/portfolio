@@ -1,4 +1,4 @@
-import Info from './contents/info/Info';
+import Info from './contents/about/About';
 import Connect from './contents/connect/Connect';
 import Skill from './contents/skill/Skill';
 import Project from './contents/project/Project';

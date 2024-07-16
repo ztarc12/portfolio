@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import FirstPage from './component/FirstPage';
 import Menu from './component/Menu'
 // import Contents from './component/Contents';
-import Info from './component/contents/info/Info';
+import Info from './component/contents/about/About';
 import ContentsData from './component/ContentsData';
 
 
@@ -59,8 +59,6 @@ function App() {
               )
             } else {
               return(
-                // <div className='section' id={content.href}>
-                // </div>
                   <Component key={i}/>
               )
             }

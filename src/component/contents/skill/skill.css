@@ -1,16 +1,13 @@
+#skill {
+  background-size: cover;
+}
 .skillArea {
-  /* border: 1px solid #000; */
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
-.skillTitle {
-  margin-bottom: 5rem;
-}
-.skillBox {
-  /* border: 1px solid red; */
+  z-index: 10;
+  padding-bottom: 2rem;
 }
 .skillBox>ul {
-  /* border: 1px solid yellow; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,19 +17,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.3rem;
+  padding-bottom: 0.7em;
+  width: 100%;
 }
 .abilityTitle {
-  width: 150px;
+  width: 15%;
+  min-width: 85px;
   color: #fff;
   font-weight: bold;
 }
-
+.skillBox{
+  width: 50%;
+}
 .abilityPercent {
   display: flex;
   justify-content: flex-end;
   height: 25px;
-  box-shadow: 0px 0px 5px #fff;
   background: lightblue;
   animation: percent 1s linear;
 }
@@ -42,7 +42,17 @@
   animation: percentText 1s linear;
   color: #fff;
 }
-
+.percentBar {
+  width: 85%;
+  background: #ccc;
+  box-shadow: 0px 0px 5px #fff;
+}
+.contentBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @keyframes percent {
   0% {
     width: 10%;
@@ -59,13 +69,32 @@
     opacity: 1;
   }
 }
-.percentBar {
-  width: 750px;
-  background: #ccc;
+
+@media (max-width:1024px) {
+  .skillBox{
+    width: 80%;
+  }
 }
-.contentBox {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 500px) {
+  .skillBox {
+    width: 100%;
+  }
+  .skillBox>ul>li {
+    flex-direction: column;
+  }
+  .abilityPercent {
+    height: 20px;
+  }
+  .percentBar {
+    width: 100%;
+  }
+  .abilityTitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  .skillArea{
+    padding-bottom: 5rem;
+  }
 }

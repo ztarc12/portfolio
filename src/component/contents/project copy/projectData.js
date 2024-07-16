@@ -1,0 +1,58 @@
+const projectData = [
+  {
+    id : 0,
+    title : 'Hoflix',
+    overview : '0',
+    img : `${process.env.PUBLIC_URL}/img/hoflix.png`,
+    useSkill : ['REACT', 'HOOK', 'Axios', 'TMDB'],
+    url : 'https://ztarc12.github.io/movieapp_hoflix',
+    github: 'https://github.com/ztarc12/movieapp_hoflix/tree/main',
+  },
+  {
+    id : 1,
+    title : 'CardGame',
+    overview : '1',
+    img : `${process.env.PUBLIC_URL}/img/cardgame.png`,
+    useSkill : ['REACT', 'STATE'],
+    url : 'https://ztarc12.github.io/cardGame',
+    github: 'https://github.com/ztarc12/cardGame',
+  },
+  {
+    id : 2,
+    title : 'ColorPalette',
+    overview : '2',
+    img : `${process.env.PUBLIC_URL}/img/colorspalette.png`,
+    useSkill : ['REACT', 'STATE', 'Axios'],
+    url : 'https://ztarc12.github.io/colorsPalette/',
+    github: 'https://github.com/ztarc12/colorsPalette',
+  },
+  {
+    id : 3,
+    title : 'DutchPay',
+    overview : '3',
+    img : `${process.env.PUBLIC_URL}/img/dutchPay.png`,
+    useSkill : ['HTML5', 'CSS3', 'JAVASCRIPT', 'LOCALSTORAGE'],
+    url : 'https://ztarc12.github.io/dutchPay/',
+    github: 'https://github.com/ztarc12/dutchPay',
+  },
+  {
+    id : 4,
+    title : 'TodoList',
+    overview : '4',
+    img : `${process.env.PUBLIC_URL}/img/todoList.png`,
+    useSkill : ['REACT', 'LOCALSTORAGE'],
+    url : 'https://ztarc12.github.io/todoList/',
+    github: 'https://github.com/ztarc12/todoList',
+  },
+  {
+    id : 5,
+    title : '포트폴리오 페이지',
+    overview : '5',
+    img : `${process.env.PUBLIC_URL}/img/portfolio.png`,
+    useSkill : ['REACT'],
+    url : 'https://ztarc12.github.io/portfolio/',
+    github: 'https://github.com/ztarc12/portfolio/tree/master',
+  },
+]
+
+export default projectData
