@@ -1,0 +1,105 @@
+#skill {
+  background-size: cover;
+}
+.skillArea {
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.skillTitle {
+
+}
+.skillBox>ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+.skillBox>ul>li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.7em;
+  width: 100%;
+}
+.abilityTitle {
+  width: 15%;
+  min-width: 85px;
+  color: #fff;
+  font-weight: bold;
+}
+.skillBox{
+  width: 50%;
+}
+.abilityPercent {
+  display: flex;
+  justify-content: flex-end;
+  height: 25px;
+  background: deepskyblue;
+  border-radius: 0 5px 5px 0;
+  animation: percent 1s linear;
+}
+.percentFront{
+  padding-right: 1rem;
+  border-radius: 0  20px 20px 0;
+  animation: percentText 1s linear;
+  color: #fff;
+}
+.percentBar {
+  width: 85%;
+  background: #ccc;
+  box-shadow: 0px 0px 5px #fff;
+}
+.contentBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes percent {
+  0% {
+    width: 10%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes percentText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width:1024px) {
+  .skillBox{
+    width: 80%;
+  }
+}
+@media (max-width: 500px) {
+  .skillBox {
+    width: 100%;
+  }
+  .skillBox>ul>li {
+    flex-direction: column;
+  }
+  .abilityPercent {
+    height: 20px;
+  }
+  .percentBar {
+    width: 100%;
+  }
+  .abilityTitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  .skillArea{
+    padding-bottom: 5rem;
+  }
+}
